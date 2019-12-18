@@ -9,28 +9,32 @@ public class Card : MonoBehaviour
     float fMoveSpeed;
     Vector2 swipeStartPos;
     Vector2 swipeCurrentPos;
+    Vector2 hidePos;
 
     bool nice;
+    bool touchable;
 
     void Start()
     {
         tracking = false;
         fMoveSpeed = 1f;
         swipeStartPos = new Vector2(0, 0);
-        if(Random.Range(0,1) == 1) 
-        {
-            nice = false; 
-        } 
-        else 
-        {
-            nice = true; 
-        }
+        touchable = true;
+        hidePos = new Vector2(0, 0);
+        GenerateCardStats();
     }
 
     void Update()
     {
-        manageOffset();
-        manageSwipe();
+        if (touchable)
+        {
+            manageOffset();
+            manageSwipe();
+        }
+        else
+        {
+            transform.Translate(hidePos * Time.deltaTime * 1f);
+        }
     }
 
     void OnMouseDown()
@@ -79,34 +83,42 @@ public class Card : MonoBehaviour
 
     void manageSwipe()
     {
-        if(transform.position.x < -4f)
+        
+        if (transform.position.x < -4f)
         {
             GameManager.gm.Swipe(this.gameObject, "Naughty");
+            touchable = false;
         }
         if (transform.position.x > 4f)
         {
             GameManager.gm.Swipe(this.gameObject, "Nice");
+            touchable = false;
         }
     }
 
     public void Hide(string dir)
     {
-        Vector2 targetPos = new Vector2(0, 0);
-
         if (dir == "Left")
         {
-            targetPos = new Vector2(-20, 0);
+            hidePos = new Vector2(-20, 0);
         }
         else
         {
-            targetPos = new Vector2(20, 0);
+           hidePos = new Vector2(20, 0);
         }
+       
+    }
 
-        while (true)
+    void GenerateCardStats()
+    {
+        if (Random.Range(0, 1) == 1)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, 1f);
+            nice = false;
         }
-
+        else
+        {
+            nice = true;
+        }
     }
 
 }

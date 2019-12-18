@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         dm.InitialiseDeck();
+        Invoke("GetNextCard", 0.5f);
     }
 
     public void Swipe(GameObject c, string decision)
@@ -48,5 +49,16 @@ public class GameManager : MonoBehaviour
         {
             cc.Hide("Right");
         }
+        Destroy(cc.gameObject, 1f);
+
+        Invoke("GetNextCard", 0.2f);
+
     }
+
+    public void GetNextCard()
+    {
+       GameObject c = (GameObject)dm.Deck.Dequeue();
+        c.SetActive(true);
+    }
+
 }

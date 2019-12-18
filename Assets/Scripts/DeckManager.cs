@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
-    Queue Deck = new Queue();
+    public Queue Deck = new Queue();
 
     [SerializeField]
     GameObject deckHolder;
@@ -18,7 +18,6 @@ public class DeckManager : MonoBehaviour
     void Start()
     {
         deckHolder = GameObject.Find("Deck");
-        InitialiseDeck();
     }
 
     public void InitialiseDeck()
