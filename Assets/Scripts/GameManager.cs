@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,12 +37,14 @@ public class GameManager : MonoBehaviour
         string[] boynamelines = boynamedata.ToString().Split('\n');
         foreach(string s in boynamelines)
         {
-            boyfirstNames.Add(s);
+            string ss = Regex.Replace(s, "[^\\w\\._]", "");
+            boyfirstNames.Add(ss);
         }
         string[] girlnamelines = girlnamedata.ToString().Split('\n');
         foreach (string s in girlnamelines)
         {
-            girlfirstNames.Add(s);
+            string ss = Regex.Replace(s, "[^\\w\\._]", "");
+            girlfirstNames.Add(ss);
         }
 
     }

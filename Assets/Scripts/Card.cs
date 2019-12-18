@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-
+    //For UI
+    [SerializeField]
+    TextMeshProUGUI nameText;
     [SerializeField]
     TextMeshProUGUI debugtext;
     [SerializeField]
@@ -38,7 +40,7 @@ public class Card : MonoBehaviour
         touchable = true;
         hidePos = new Vector2(0, 0);
         GenerateCardStats();
-        debugtext.SetText(nice.ToString());
+        //debugtext.SetText(nice.ToString());
     }
 
     void Update()
@@ -163,9 +165,19 @@ public class Card : MonoBehaviour
 
     void GenerateName()
     {
-        String first = GameManager.gm.boyfirstNames[UnityEngine.Random.Range(0, GameManager.gm.boyfirstNames.Count + 1)];
+        String first = null;
 
+        if (gender == "Boy")
+        {
+            first = GameManager.gm.boyfirstNames[UnityEngine.Random.Range(0, GameManager.gm.boyfirstNames.Count)];
+        }
+        else
+        {
+            first = GameManager.gm.girlfirstNames[UnityEngine.Random.Range(0, GameManager.gm.girlfirstNames.Count)];
+        }
+       
         childName = first;
+        nameText.SetText(childName);
     }
     void GenerateGender()
     {
