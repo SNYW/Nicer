@@ -1,18 +1,34 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
 
+    [SerializeField]
+    TextMeshProUGUI debugtext;
+    [SerializeField]
+    Image overlay;
+
+    //For Swiping Control
     bool tracking;
     float fMoveSpeed;
     Vector2 swipeStartPos;
     Vector2 swipeCurrentPos;
     Vector2 hidePos;
-
-    bool nice;
     bool touchable;
+
+    //Stats for Naughty/Nice
+    public String childName;
+    public String gender;
+    public bool nice;
+    public bool Rude;
+    public int detentionTimes;
+    public int argumentAmount;
+    public String moodType;
 
     void Start()
     {
@@ -22,6 +38,7 @@ public class Card : MonoBehaviour
         touchable = true;
         hidePos = new Vector2(0, 0);
         GenerateCardStats();
+        debugtext.SetText(nice.ToString());
     }
 
     void Update()
@@ -111,13 +128,54 @@ public class Card : MonoBehaviour
 
     void GenerateCardStats()
     {
-        if (Random.Range(0, 1) == 1)
+        if (UnityEngine.Random.Range(0, 2) == 1)
         {
             nice = false;
         }
         else
         {
             nice = true;
+        }
+
+        GenerateGender();
+        GenerateName();
+
+        if (nice)
+        {
+            GenerateNiceStats();
+        }
+        else
+        {
+            GenerateNaughtyStats();
+        }
+
+    }
+
+    void GenerateNaughtyStats()
+    {
+      
+    }
+
+    void GenerateNiceStats()
+    {
+      //TODO  
+    }
+
+    void GenerateName()
+    {
+        String first = GameManager.gm.boyfirstNames[UnityEngine.Random.Range(0, GameManager.gm.boyfirstNames.Count + 1)];
+
+        childName = first;
+    }
+    void GenerateGender()
+    {
+        if (UnityEngine.Random.Range(0, 2) == 1)
+        {
+            gender = "Boy";
+        }
+        else
+        {
+            gender = "Girl";
         }
     }
 

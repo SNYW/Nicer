@@ -8,6 +8,17 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
 
     DeckManager dm;
+    bool playerGuess;
+
+    public Card minimumGoodStats;
+
+    [SerializeField]
+    public TextAsset boynamedata;
+    [SerializeField]
+    public TextAsset girlnamedata;
+
+    public List<string> boyfirstNames;
+    public List<string> girlfirstNames;
 
     void init()
     {
@@ -22,6 +33,16 @@ public class GameManager : MonoBehaviour
         }
 
         dm = GetComponent<DeckManager>();
+        string[] boynamelines = boynamedata.ToString().Split('\n');
+        foreach(string s in boynamelines)
+        {
+            boyfirstNames.Add(s);
+        }
+        string[] girlnamelines = girlnamedata.ToString().Split('\n');
+        foreach (string s in girlnamelines)
+        {
+            girlfirstNames.Add(s);
+        }
 
     }
 
@@ -44,11 +65,19 @@ public class GameManager : MonoBehaviour
         if (decision=="Naughty")
         {
             cc.Hide("Left");
+            playerGuess = false;
         }
         else
         {
             cc.Hide("Right");
+            playerGuess = true;
         }
+
+        if(playerGuess == cc.nice)
+        {
+            Debug.Log("Correct");
+        }
+
         Destroy(cc.gameObject, 1f);
 
         Invoke("GetNextCard", 0.2f);
