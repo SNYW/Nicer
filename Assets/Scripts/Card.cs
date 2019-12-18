@@ -10,13 +10,21 @@ public class Card : MonoBehaviour
     Vector2 swipeStartPos;
     Vector2 swipeCurrentPos;
 
-    GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    bool nice;
 
     void Start()
     {
         tracking = false;
         fMoveSpeed = 1f;
         swipeStartPos = new Vector2(0, 0);
+        if(Random.Range(0,1) == 1) 
+        {
+            nice = false; 
+        } 
+        else 
+        {
+            nice = true; 
+        }
     }
 
     void Update()
@@ -73,12 +81,32 @@ public class Card : MonoBehaviour
     {
         if(transform.position.x < -4f)
         {
-            Debug.Log("LEFT");
+            GameManager.gm.Swipe(this.gameObject, "Naughty");
         }
         if (transform.position.x > 4f)
         {
-            Debug.Log("RIGHT");
+            GameManager.gm.Swipe(this.gameObject, "Nice");
         }
+    }
+
+    public void Hide(string dir)
+    {
+        Vector2 targetPos = new Vector2(0, 0);
+
+        if (dir == "Left")
+        {
+            targetPos = new Vector2(-20, 0);
+        }
+        else
+        {
+            targetPos = new Vector2(20, 0);
+        }
+
+        while (true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, 1f);
+        }
+
     }
 
 }

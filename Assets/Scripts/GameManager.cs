@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public static GameManager gm;
+
+    DeckManager dm;
+
+    void init()
     {
-        
+        if(gm != null)
+        {
+            gm = null;
+            gm = this.gameObject.GetComponent<GameManager>();
+        }
+        else
+        {
+            gm = this.gameObject.GetComponent<GameManager>();
+        }
+
+        dm = GetComponent<DeckManager>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        init();
+    }
+
+    void Start()
+    {
+        dm.InitialiseDeck();
+    }
+
+    public void Swipe(GameObject c, string decision)
+    {
+
+        Card cc = c.GetComponent<Card>();
+
+        if (decision=="Naughty")
+        {
+            cc.Hide("Left");
+        }
+        else
+        {
+            cc.Hide("Right");
+        }
     }
 }

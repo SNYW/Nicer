@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\DeckManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Projects/Game Dev/Nicer/Nicer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
