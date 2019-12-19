@@ -60,6 +60,14 @@ public class GameManager : MonoBehaviour
         Invoke("GetNextCard", 0.5f);
     }
 
+    private void Update()
+    {
+        if(dm.Deck.Count < 3)
+        {
+            dm.InitialiseDeck();
+        }
+    }
+
     public void Swipe(GameObject c, string decision)
     {
 

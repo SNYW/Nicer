@@ -11,6 +11,12 @@ public class Card : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI nameText;
     [SerializeField]
+    TextMeshProUGUI genderText;
+    [SerializeField]
+    TextMeshProUGUI detentionText;
+    [SerializeField]
+    TextMeshProUGUI attitudeText;
+    [SerializeField]
     TextMeshProUGUI debugtext;
     [SerializeField]
     Image overlay;
@@ -27,9 +33,9 @@ public class Card : MonoBehaviour
     public String childName;
     public String gender;
     public bool nice;
-    public bool Rude;
+    public String attitude;
     public int detentionTimes;
-    public int argumentAmount;
+    public String avgGrade;
     public String moodType;
 
     void Start()
@@ -40,7 +46,6 @@ public class Card : MonoBehaviour
         touchable = true;
         hidePos = new Vector2(0, 0);
         GenerateCardStats();
-        //debugtext.SetText(nice.ToString());
     }
 
     void Update()
