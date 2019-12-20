@@ -20,6 +20,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI avgGradeText;
     public TextMeshProUGUI timeOutsText;
 
+    //Player feedback animators
+    Animator correctGuessAnimator;
+    Animator wrongGuessAnimator;
+    public GameObject correctGuessPanel;
+    public GameObject wrongGuessPanel;
+
+
     [SerializeField]
     public TextAsset boynamedata;
     [SerializeField]
@@ -71,7 +78,8 @@ public class GameManager : MonoBehaviour
         GenerateMinimumGoodStats();
         dm.InitialiseDeck();
         Invoke("GetNextCard", 0.5f);
-       
+        correctGuessAnimator = correctGuessPanel.GetComponent<Animator>();
+        wrongGuessAnimator = wrongGuessPanel.GetComponent<Animator>();
     }
 
     private void Update()
@@ -98,15 +106,24 @@ public class GameManager : MonoBehaviour
             playerGuess = true;
         }
 
-        if(playerGuess == cc.nice)
-        {
-            Debug.Log("Correct");
-        }
+        Guess(playerGuess == cc.nice);
 
         Destroy(cc.gameObject, 1f);
 
         Invoke("GetNextCard", 0.2f);
 
+    }
+
+    private void Guess(bool correct)
+    {
+        if (correct)
+        {
+            correctGuessAnimator.Play("Play");
+        }
+        else
+        {
+            wrongGuessAnimator.Play("Play");
+        }
     }
 
     public void GetNextCard()
@@ -118,12 +135,12 @@ public class GameManager : MonoBehaviour
     private void GenerateMinimumGoodStats()
     {
         minimumGoodStats.ResetCard();
-        minimumGoodStats.detentionTimes = UnityEngine.Random.Range(1, 50);
+        minimumGoodStats.detentionTimes = UnityEngine.Random.Range(1, 20);
         minimumDetentionText.SetText(minimumGoodStats.detentionTimes.ToString());
-        minimumGoodStats.avgGrade =UnityEngine.Random.Range(0, gradesInOrder.Length);
+        minimumGoodStats.avgGrade =UnityEngine.Random.Range(0, gradesInOrder.Length-1);
         avgGradeText.SetText(gradesInOrder[minimumGoodStats.avgGrade]);
-        minimumGoodStats.timeOuts = UnityEngine.Random.Range(1, 50);
-        timeOutsText.SetText(minimumGoodStats.detentionTimes.ToString());
+        minimumGoodStats.timeOuts = UnityEngine.Random.Range(1, 20);
+        timeOutsText.SetText(minimumGoodStats.timeOuts.ToString());
     }
 
 }

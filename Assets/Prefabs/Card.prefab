@@ -152,7 +152,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137976306791000658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -305,13 +305,13 @@ MonoBehaviour:
   m_margin: {x: -1.2134726, y: 0.03388548, z: -1.3103853, w: 0.10165453}
   m_textInfo:
     textComponent: {fileID: 7075936475998215722}
-    characterCount: 35
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 2
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -462,14 +462,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 2228200894386081799}
-    characterCount: 11
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1867421674396089962
 Transform:
   m_ObjectHideFlags: 0
@@ -559,15 +559,15 @@ MonoBehaviour:
   nameText: {fileID: 1503521485294411528}
   genderText: {fileID: 0}
   detentionText: {fileID: 2228200894386081799}
+  timeOutText: {fileID: 235631548056175606}
   avgGradeText: {fileID: 6278011693714950887}
   attitudeText: {fileID: 1573592656384245857}
-  debugtext: {fileID: 0}
-  overlay: {fileID: 0}
   childName: 
   gender: 
   nice: 0
   attitude: 
   detentionTimes: 0
+  timeOuts: 0
   avgGrade: 0
   moodType: 
 --- !u!1 &1888505238021483808
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888505238021483808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2293259394583128600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -888,13 +888,13 @@ MonoBehaviour:
   m_margin: {x: -1.2309121, y: 0.36782122, z: -1.6712383, w: 0.37447023}
   m_textInfo:
     textComponent: {fileID: 7433336300090280540}
-    characterCount: 52
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 7
-    wordCount: 8
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1044,13 +1044,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1503521485294411528}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5279595491611704812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -1394,13 +1394,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 3862376012341913563}
-    characterCount: 12
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 3
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1551,14 +1551,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 1573592656384245857}
-    characterCount: 11
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -1780,13 +1780,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 3124980178153494930}
-    characterCount: 10
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1936,13 +1936,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 6360141852620269288}
-    characterCount: 13
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -2093,14 +2093,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 6278011693714950887}
-    characterCount: 11
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2249,13 +2249,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 2716567789535984002}
-    characterCount: 9
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -2406,14 +2406,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.000000027854282, w: -0.0141919255}
   m_textInfo:
     textComponent: {fileID: 235631548056175606}
-    characterCount: 11
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}

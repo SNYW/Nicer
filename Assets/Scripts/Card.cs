@@ -15,13 +15,11 @@ public class Card : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI detentionText;
     [SerializeField]
+    TextMeshProUGUI timeOutText;
+    [SerializeField]
     TextMeshProUGUI avgGradeText;
     [SerializeField]
     TextMeshProUGUI attitudeText;
-    [SerializeField]
-    TextMeshProUGUI debugtext;
-    [SerializeField]
-    Image overlay;
 
     //For Swiping Control
     bool tracking;
@@ -163,12 +161,22 @@ public class Card : MonoBehaviour
 
     void GenerateNaughtyStats()
     {
-
+        detentionTimes = UnityEngine.Random.Range(GameManager.gm.minimumGoodStats.detentionTimes,21);
+        detentionText.SetText(detentionTimes.ToString());
+        timeOuts = UnityEngine.Random.Range(GameManager.gm.minimumGoodStats.timeOuts,21);
+        timeOutText.SetText(timeOuts.ToString());
+        avgGrade = UnityEngine.Random.Range(GameManager.gm.minimumGoodStats.avgGrade, GameManager.gm.gradesInOrder.Length); ;
+        avgGradeText.SetText(GameManager.gm.gradesInOrder[avgGrade]);
     }
 
     void GenerateNiceStats()
     {
-        //TODO  
+        detentionTimes = UnityEngine.Random.Range(0,GameManager.gm.minimumGoodStats.detentionTimes);
+        detentionText.SetText(detentionTimes.ToString());
+        timeOuts = UnityEngine.Random.Range(0, GameManager.gm.minimumGoodStats.timeOuts);
+        timeOutText.SetText(timeOuts.ToString());
+        avgGrade = UnityEngine.Random.Range(0, GameManager.gm.minimumGoodStats.avgGrade);
+        avgGradeText.SetText(GameManager.gm.gradesInOrder[avgGrade]);
     }
 
     void GenerateName()
