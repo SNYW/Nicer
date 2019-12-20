@@ -558,8 +558,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1503521485294411528}
   genderText: {fileID: 0}
-  detentionText: {fileID: 0}
-  attitudeText: {fileID: 0}
+  detentionText: {fileID: 2228200894386081799}
+  avgGradeText: {fileID: 6278011693714950887}
+  attitudeText: {fileID: 1573592656384245857}
   debugtext: {fileID: 0}
   overlay: {fileID: 0}
   childName: 
@@ -567,7 +568,7 @@ MonoBehaviour:
   nice: 0
   attitude: 
   detentionTimes: 0
-  avgGrade: 
+  avgGrade: 0
   moodType: 
 --- !u!1 &1888505238021483808
 GameObject:

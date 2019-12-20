@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using System.Text.RegularExpressions;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     public Card minimumGoodStats;
 
+    //Text areas for minimum criteria
+    public TextMeshProUGUI minimumDetentionText;
+    public TextMeshProUGUI avgGradeText;
+    public TextMeshProUGUI timeOutsText;
+
     [SerializeField]
     public TextAsset boynamedata;
     [SerializeField]
@@ -20,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     public List<string> boyfirstNames;
     public List<string> girlfirstNames;
+
+    private string grades;
+    public String[] gradesInOrder;
 
     void init()
     {
@@ -56,8 +66,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        grades = "A B C D E F";
+        gradesInOrder = grades.Split(' ');
+        GenerateMinimumGoodStats();
         dm.InitialiseDeck();
         Invoke("GetNextCard", 0.5f);
+       
     }
 
     private void Update()
@@ -99,6 +113,17 @@ public class GameManager : MonoBehaviour
     {
        GameObject c = (GameObject)dm.Deck.Dequeue();
         c.SetActive(true);
+    }
+    
+    private void GenerateMinimumGoodStats()
+    {
+        minimumGoodStats.ResetCard();
+        minimumGoodStats.detentionTimes = UnityEngine.Random.Range(1, 50);
+        minimumDetentionText.SetText(minimumGoodStats.detentionTimes.ToString());
+        minimumGoodStats.avgGrade =UnityEngine.Random.Range(0, gradesInOrder.Length);
+        avgGradeText.SetText(gradesInOrder[minimumGoodStats.avgGrade]);
+        minimumGoodStats.timeOuts = UnityEngine.Random.Range(1, 50);
+        timeOutsText.SetText(minimumGoodStats.detentionTimes.ToString());
     }
 
 }

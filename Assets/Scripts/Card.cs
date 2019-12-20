@@ -15,6 +15,8 @@ public class Card : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI detentionText;
     [SerializeField]
+    TextMeshProUGUI avgGradeText;
+    [SerializeField]
     TextMeshProUGUI attitudeText;
     [SerializeField]
     TextMeshProUGUI debugtext;
@@ -35,7 +37,8 @@ public class Card : MonoBehaviour
     public bool nice;
     public String attitude;
     public int detentionTimes;
-    public String avgGrade;
+    public int timeOuts;
+    public int avgGrade;
     public String moodType;
 
     void Start()
@@ -107,7 +110,7 @@ public class Card : MonoBehaviour
 
     void manageSwipe()
     {
-        
+
         if (transform.position.x < -4f)
         {
             GameManager.gm.Swipe(this.gameObject, "Naughty");
@@ -128,9 +131,9 @@ public class Card : MonoBehaviour
         }
         else
         {
-           hidePos = new Vector2(20, 0);
+            hidePos = new Vector2(20, 0);
         }
-       
+
     }
 
     void GenerateCardStats()
@@ -160,12 +163,12 @@ public class Card : MonoBehaviour
 
     void GenerateNaughtyStats()
     {
-      
+
     }
 
     void GenerateNiceStats()
     {
-      //TODO  
+        //TODO  
     }
 
     void GenerateName()
@@ -180,7 +183,7 @@ public class Card : MonoBehaviour
         {
             first = GameManager.gm.girlfirstNames[UnityEngine.Random.Range(0, GameManager.gm.girlfirstNames.Count)];
         }
-       
+
         childName = first;
         nameText.SetText(childName);
     }
@@ -196,4 +199,14 @@ public class Card : MonoBehaviour
         }
     }
 
+    public void ResetCard()
+    {
+        childName = "";
+        gender = "";
+        attitude = "";
+        detentionTimes = 0;
+        avgGrade = 0;
+        moodType = "";
+    }
 }
+
